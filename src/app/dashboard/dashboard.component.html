@@ -1,0 +1,75 @@
+<section class="bg-gray-200 flex-col gap-4">
+  <div class="bg-white flex items-end justify-end pr-36">
+    <app-searchbar></app-searchbar>
+  </div>
+  <div>
+    <div *ngIf="isLoading; else dataTemplate">
+      <app-loader></app-loader>
+    </div>
+    <ng-template #dataTemplate>
+      <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+        <table
+          class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400"
+        >
+          <thead
+            class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400"
+          >
+            <tr>
+              <th scope="col" class="px-6 py-3">Student Name</th>
+              <th scope="col" class="px-6 py-3">Semester</th>
+              <th scope="col" class="px-6 py-3">Branch</th>
+              <th scope="col" class="px-6 py-3">View Details</th>
+              <th scope="col" class="px-6 py-3">Action</th>
+            </tr>
+          </thead>
+          <tbody *ngIf="students$ | async as students; else noData">
+            <tr
+              *ngFor="let user of students"
+              class="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
+            >
+              <td
+                class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+              >
+                {{ user.name }}
+              </td>
+              <td class="px-6 py-4">{{ user.semester }}</td>
+              <td class="px-6 py-4">{{ user.branch }}</td>
+              <td class="px-6 py-4">
+                <button
+                  class="bg-slate-600 hover:bg-slate-800 text-center text-white px-2 py-1 rounded-md"
+                >
+                  View
+                </button>
+              </td>
+              <td class="px-6 py-4">
+                <div class="flex gap-4">
+                  <button>
+                    <img
+                      src="/assets/delete.png"
+                      class="w-6 h-6 hover:shadow-md"
+                      alt="delete_image"
+                    />
+                  </button>
+                  <button>
+                    <img
+                      src="/assets//update.png"
+                      class="w-6 h-6 hover:shadow-md"
+                      alt="update_image"
+                    />
+                  </button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+          <ng-template #noData>
+            <tr>
+              <td colspan="3" class="text-center px-6 py-4">
+                No students found
+              </td>
+            </tr>
+          </ng-template>
+        </table>
+      </div>
+    </ng-template>
+  </div>
+</section>

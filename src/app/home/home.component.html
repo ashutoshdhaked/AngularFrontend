@@ -1,0 +1,63 @@
+<div class="home-container">
+  <section
+    class="hero bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-600 text-white h-screen flex flex-col justify-center items-center space-y-6 text-center animate__animated animate__fadeIn animate__delay-1s"
+  >
+    <h1 class="text-5xl font-extrabold leading-tight">
+      Welcome to the Student Management System
+    </h1>
+    <p class="text-lg font-medium max-w-xl mx-auto">
+      Manage your students, courses, grades, and more, all in one place.
+      Simplifying your educational journey.
+    </p>
+    <div class="cta-buttons space-x-4">
+      <button
+        class="cta-btn bg-yellow-400 text-gray-800 hover:bg-yellow-500 px-6 py-3 rounded-full shadow-lg transform transition-transform duration-300 hover:scale-105"
+      >
+        <a routerLink="/login">View Students</a>
+      </button>
+      <button
+        class="cta-btn bg-green-500 text-white hover:bg-green-600 px-6 py-3 rounded-full shadow-lg transform transition-transform duration-300 hover:scale-105"
+      >
+        <a routerLink="/login">Add New Student</a>
+      </button>
+    </div>
+  </section>
+
+  <section class="features py-16 px-6 bg-gray-50">
+    <h2 class="text-3xl font-bold text-center mb-10">Features</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
+      <div
+        class="feature-card bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:scale-105"
+      >
+        <div class="feature-icon text-4xl mb-4 text-yellow-400">📚</div>
+        <h3 class="text-xl font-semibold mb-2">Manage Students</h3>
+        <p>
+          View, edit, and manage student records with ease. Keep track of all
+          your student data in one place.
+        </p>
+      </div>
+
+      <div
+        class="feature-card bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:scale-105"
+      >
+        <div class="feature-icon text-4xl mb-4 text-indigo-500">🎓</div>
+        <h3 class="text-xl font-semibold mb-2">Courses</h3>
+        <p>
+          Assign courses to students and track their progress in real-time. A
+          seamless course management experience.
+        </p>
+      </div>
+
+      <div
+        class="feature-card bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:scale-105"
+      >
+        <div class="feature-icon text-4xl mb-4 text-green-500">📈</div>
+        <h3 class="text-xl font-semibold mb-2">Grades & Progress</h3>
+        <p>
+          Track student performance and provide feedback on assignments, exams,
+          and grades easily.
+        </p>
+      </div>
+    </div>
+  </section>
+</div>
