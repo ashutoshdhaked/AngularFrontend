@@ -1,0 +1,111 @@
+<section class="bg-gray-200">
+    <div class="flex flex-col items-center justify-center mx-auto md:h-screen lg:py-0">
+      <div class="w-full bg-white rounded-lg shadow-md md:mt-0 sm:max-w-md xl:p-0">
+        <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
+          <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl">
+            Add New User
+          </h1>
+          <form class="space-y-4 md:space-y-6" (ngSubmit)="submit()">
+            <div>
+              <label for="name" class="block mb-2 text-sm font-medium text-gray-900">Student Name</label>
+              <input
+                type="text"
+                id="name"
+                [(ngModel)]="name"
+                name="name"
+                class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5"
+                placeholder="Your name"
+                required
+              />
+            </div>
+  
+            <div>
+              <label for="email" class="block mb-2 text-sm font-medium text-gray-900">Student Email</label>
+              <input
+                type="email"
+                id="email"
+                [(ngModel)]="email"
+                name="email"
+                class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5"
+                placeholder="name@company.com"
+                required
+              />
+            </div>
+  
+            <div>
+              <label for="dob" class="block mb-2 text-sm font-medium text-gray-900">Student Date Of Birth</label>
+              <input
+                type="date"
+                id="dob"
+                [(ngModel)]="dob"
+                name="dob"
+                class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5"
+                required
+              />
+            </div>
+  
+            <div>
+              <label for="branch" class="block mb-2 text-sm font-medium text-gray-900">Student Branch</label>
+              <select
+                id="branch"
+                [(ngModel)]="branch"
+                name="branch"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5"
+                required
+              >
+                <option value="">Select Branch</option>
+                <option value="Computer Science And Engineering">CSE</option>
+                <option value="Civil Engineering">CE</option>
+                <option value="Mechanical Engineering">ME</option>
+                <option value="Electronics & Communication Engineering">ECE</option>
+                <option value="Automobile Engineering">AE</option>
+                <option value="Artificial Intelligence">AI</option>
+              </select>
+            </div>
+  
+            <div>
+              <label for="semester" class="block mb-2 text-sm font-medium text-gray-900">Student Semester</label>
+              <select
+                id="semester"
+                [(ngModel)]="semester"
+                name="semester"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5"
+                required
+              >
+                <option value="">Select Semester</option>
+                <option value="1">1st</option>
+                <option value="2">2nd</option>
+                <option value="3">3rd</option>
+                <option value="4">4th</option>
+                <option value="5">5th</option>
+                <option value="6">6th</option>
+                <option value="7">7th</option>
+                <option value="8">8th</option>
+              </select>
+            </div>
+  
+            <div>
+              <label class="block mb-2 text-sm font-medium text-gray-900" for="file_input">
+                Choose Student Picture:
+              </label>
+              <input
+                type="file"
+                id="file_input"
+                name="image"
+                (change)="handleImageChange($event)"
+                class="flex h-9 w-full rounded-md border border-input bg-background px-3 py-1 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-foreground file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
+              />
+            </div>
+            <button
+            type="submit"
+            class="text-white bg-slate-600 hover:bg-slate-800 text-center py-2 px-8 rounded-md w-full"
+            [disabled]="loading"
+          >
+            {{ loading ? 'Creating....' : 'Create Student' }}
+          </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  

@@ -6,10 +6,11 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class StudentService {
-  private getStudentsUrl = 'http://localhost:3000/student'; 
+  private getStudentsUrl = 'http://localhost:3000/student';
   private delteteStudentsUrl = 'http://localhost:3000/student/';
-  private updateStudentsUrl = "http://localhost:3000/student/";
-  private filterStudentUrl = "http://localhost:3000/student/filter/";
+  private updateStudentsUrl = 'http://localhost:3000/student/';
+  private createStudentUrl = 'http://localhost:3000/student/';
+  private filterStudentUrl = 'http://localhost:3000/student/filter/';
 
   constructor(private http: HttpClient) {}
 
@@ -17,16 +18,19 @@ export class StudentService {
     return this.http.get<any>(this.getStudentsUrl);
   }
 
-  deleteStudent(id : number){
-      this.http.delete<any>(this.delteteStudentsUrl+`${id}`);
-  } 
- 
-  updateStudent(id : number , body : any){
-      this.http.put<any>(this.updateStudentsUrl+`${id}`,body);
+  createStudent(data : any) :Observable<any>{
+     return this.http.post<any>(this.createStudentUrl,data);
   }
 
-  filterStudent(key : string , text : string){
-    this.http.get<any>(this.filterStudentUrl+`${key}/`+`${text}`);
-  } 
+  deleteStudent(id: number): Observable<any> {
+    return this.http.delete<any>(this.delteteStudentsUrl + `${id}`);
+  }
 
+  updateStudent(id: number, body: any): Observable<any> {
+    return this.http.put<any>(this.updateStudentsUrl + `${id}`, body);
+  }
+
+  filterStudent(key: string, text: string): Observable<any> {
+    return this.http.get<any>(this.filterStudentUrl + `${key}/` + `${text}`);
+  }
 }

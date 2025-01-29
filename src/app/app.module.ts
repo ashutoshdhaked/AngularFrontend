@@ -12,12 +12,17 @@ import { HomeComponent } from './home/home.component';
 import { SearchbarComponent } from './searchbar/searchbar.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LoaderComponent } from './loader/loader.component';
+import { CreateStudentComponent } from './createorpdatestudent/createstudent.component';
+import { UpdateStudentComponent } from './update-student/update-student.component';
+import { ViewStudentComponent } from './view-student/view-student.component';
+
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'dashboard', component: DashboardComponent },
+  { path: 'createstudent', component: CreateStudentComponent },
 ];
 
 @NgModule({
@@ -30,9 +35,12 @@ const routes: Routes = [
     HomeComponent,
     SearchbarComponent,
     LoaderComponent,
+    CreateStudentComponent,
+    UpdateStudentComponent,
+    ViewStudentComponent,
   ],
   imports: [
-    RouterModule.forRoot(routes),
+    RouterModule.forRoot(routes), 
     BrowserModule,
     AppRoutingModule,
     FormsModule,

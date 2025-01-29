@@ -8,14 +8,14 @@
 
     <form (ngSubmit)="onSubmit()" #registerForm="ngForm">
       <div class="mb-4">
-        <label for="fullName" class="block text-sm font-medium text-gray-600"
+        <label for="fullname" class="block text-sm font-medium text-gray-600"
           >Full Name</label
         >
         <input
           type="text"
-          id="fullName"
-          name="fullName"
-          [(ngModel)]="fullName"
+          id="fullname"
+          name="fullname"
+          [(ngModel)]="fullname"
           required
           class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-500"
         />

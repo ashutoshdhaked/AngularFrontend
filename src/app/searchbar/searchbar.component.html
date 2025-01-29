@@ -1,48 +1,49 @@
-<section class="bg-white  py-4 flex justify-center items-center">
-    <form  class="max-w-lg mx-auto w-2/3">
-      <div class="flex">
-        <select
-          id="filter"
-          name="key"
-          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-l-lg block w-28 p-2.5 focus:outline-none focus:ring-0"
+<section class="bg-white py-4 flex justify-center items-center">
+  <form (ngSubmit)="onSearch()" class="max-w-lg mx-auto w-2/3">
+    <div class="flex">
+      <select
+        id="filter"
+        name="key"
+        [(ngModel)]="searchKey"
+        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-l-lg block w-28 p-2.5 focus:outline-none focus:ring-0"
+      >
+        <option value="">Filter By</option>
+        <option value="name">Name</option>
+        <option value="semester">Semester</option>
+        <option value="branch">Branch</option>
+      </select>
+      <div class="relative w-full">
+        <input
+          type="search"
+          id="search-dropdown"
+          name="text"
+          [(ngModel)]="searchText"
+          class="block p-2.5 w-80 z-20 text-sm text-gray-900 bg-gray-50 rounded-e-lg border-s-gray-50 border-s-2 border border-gray-300 focus:outline-none focus:ring-0"
+          placeholder="name, branch, semester.."
+          required
+        />
+        <button
+          type="submit"
+          class="absolute top-0 -right-12 p-2.5 text-sm font-medium h-full text-white bg-slate-700 rounded-e-lg border border-slate-700 hover:bg-slate-800 focus:outline-none focus:ring-0"
         >
-          <option value="">Filter By</option>
-          <option value="name">Name</option>
-          <option value="semester">Semester</option>
-          <option value="branch">Branch</option>
-        </select>
-        <div class="relative w-full">
-          <input
-            type="search"
-            id="search-dropdown"
-            name="text"
-            class="block p-2.5 w-80 z-20  text-sm text-gray-900 bg-gray-50 rounded-e-lg border-s-gray-50 border-s-2 border border-gray-300 focus:outline-none focus:ring-0"
-            placeholder="name,branch,semester.."
-            required
-          />
-          <button
-            type="submit"
-            class="absolute top-0 -right-12 p-2.5 text-sm font-medium h-full text-white bg-slate-700 rounded-e-lg border border-slate-700 hover:bg-slate-800 focus:outline-none focus:ring-0"
+          <svg
+            class="w-4 h-4"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 20 20"
           >
-            <svg
-              class="w-4 h-4"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 20 20"
-            >
-              <path
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
-              />
-            </svg>
-            <span class="sr-only">Search</span>
-          </button>
-        </div>
+            <path
+              stroke="currentColor"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
+            />
+          </svg>
+          <span class="sr-only">Search</span>
+        </button>
       </div>
-    </form>
-  </section>
-  
+    </div>
+  </form>
+</section>

@@ -1,0 +1,39 @@
+<div
+  *ngIf="student"
+  class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50"
+>
+  <div class="bg-white rounded-2xl shadow-lg w-full max-w-lg p-6">
+    <div class="flex justify-between items-center border-b pb-3">
+      <h2 class="text-2xl font-bold text-gray-900">Student Details</h2>
+      <button
+        class="text-gray-500 hover:text-red-500 text-2xl font-bold"
+        (click)="closeModal.emit()"
+      >
+        ×
+      </button>
+    </div>
+
+    <div class="flex justify-center my-4">
+      <img
+        [src]="student.image || 'https://via.placeholder.com/150'"
+        alt="Student Image"
+        class="w-32 h-32 rounded-full border-2 border-gray-300 shadow-md object-cover"
+      />
+    </div>
+    <div class="space-y-3">
+      <p class="text-lg"><span class="font-semibold">Name:</span> {{ student.name }}</p>
+      <p class="text-lg"><span class="font-semibold">Email:</span> {{ student.email }}</p>
+      <p class="text-lg"><span class="font-semibold">Branch:</span> {{ student.branch }}</p>
+      <p class="text-lg"><span class="font-semibold">Semester:</span> {{ student.semester }}</p>
+      <p class="text-lg"><span class="font-semibold">DOB:</span> {{ student.dob }}</p>
+    </div>
+    <div class="mt-6 flex justify-end">
+      <button
+        class="px-4 py-1 bg-gray-800 text-white font-semibold rounded-lg hover:bg-gray-700"
+        (click)="closeModal.emit()"
+      >
+        Close
+      </button>
+    </div>
+  </div>
+</div>
