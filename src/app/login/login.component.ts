@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AdminService } from '../admin.service';
 import { Router } from '@angular/router';
-// import { AuthService } from '../auth.service';
+import { AuthService } from '../auth.service';
 
 
 @Component({
@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
   constructor(
     private adminService: AdminService,
     private router: Router,
-    // private authService : AuthService
+     private authService : AuthService
   ) {}
 
   ngOnInit(): void {}
@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
       this.adminService.loginAdmin({ email, password }).subscribe(
         (response) => {
           localStorage.setItem("token",response.token);
-          // this.authService.updateBoolean(true);
+           this.authService.updateBoolean(true);
           this.router.navigate(['/dashboard']); 
         },
         (error) => {
